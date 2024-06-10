@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div id="card">
+    <div class="sidebar">
+      <div class="step step1">
+        <div class="number one">1</div>
+        <div class="current-step">
+          <span>STEP 1</span>
+          <h3>YOUR PLAN</h3>
+        </div>
+      </div>
+      
+      <div class="step step2">
+        <div class="number two">2</div>
+        <div class="current-step">
+          <span>STEP 2</span>
+          <h3>SELECT PLAN</h3>
+        </div>
+      </div>
+
+      <div class="step step3">
+        <div class="number three">3</div>
+        <div class="current-step">
+          <span>STEP 3</span>
+          <h3>ADD-ONS</h3>
+        </div>
+      </div>
+
+      <div class="step step4">
+        <div class="number four">4</div>
+        <div class="current-step">
+          <span>STEP 4</span>
+          <h3>SUMMARY</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      <div class="form">
+        <div class="info active">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+          <label for="name">Name</label>
+          <input type="text" placeholder="e.g. Stephen King" required>
+          <label for="email">Email Address</label>
+          <input type="email" placeholder="e.g. stephenking@lorem.com" required>
+          <div class="tel">
+            <label for="tel">Phone Number</label>
+            <label for="tel" class="error">This field is required</label>
+          </div>
+          <input class="error" type="tel" placeholder="e.g. +1 234 567 890" required>
+        </div>
+
+        <div class="plan">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+          <div class="plan-container">
+
+            <div class="plan-item arcade">
+              <img src="assets/images/icon-arcade.svg" alt="">
+              <div class="select">
+                <span class="item-catagory">Arcade</span>
+                <div class="monthly-price price price-monthly">$9/mo</div>
+                <div class="yearly-price">
+                  <span class="price">$90/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-item advanced">
+              <img src="assets/images/icon-advanced.svg" alt="">
+              <div class="select">
+                <span class="item-catagory">Advanced</span>
+                <div class="monthly-price price price-monthly">$12/mo</div>
+                <div class="yearly-price">
+                  <span class="price">$120/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-item pro">
+              <img src="assets/images/icon-pro.svg" alt="">
+              <div class="select">
+                <span class="item-catagory">Pro</span>
+                <div class="monthly-price price price-monthly">$15/mo</div>
+                <div class="yearly-price">
+                  <span class="price">$150/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="plan-switch">
+            <span class="monthly blur">Monthly</span>
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="plan-switch-checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <span class="yearly">Yearly</span>
+          </div>
+
+        </div>
+
+        <div class="add-ons">
+          <H1>Pick add-ons</H1>
+          <p>Add-ons help enhance your gaming experience.</p>
+
+          <div class="services addon-type">
+            <input type="checkbox" id="addon-checkbox">
+            <div class="online">
+              <h3>Online Services</h3>
+              <span class="add">Access to multiplayer games</span>
+            </div>
+            <span class="addon-price-monthly price">+$1/mo</span>
+            <span class="addon-price-yearly price">+$10/mo</span>
+          </div>
+
+          <div class="storage addon-type">
+            <input type="checkbox" id="addon-checkbox">
+            <div class="local">
+              <h3>Larger storage</h3>
+              <span class="add">Extra 1TB of cloud save</span>
+            </div>
+            <span class="addon-price-monthly price">+$2/mo</span>
+            <span class="addon-price-yearly price">+$20/mo</span>
+          </div>
+
+          <div class="profile addon-type">
+            <input type="checkbox" id="addon-checkbox">
+            <div class="customize">
+              <h3>Customizable Profile</h3>
+              <span class="add">Custom theme on your profile</span>
+            </div>
+            <span class="addon-price-monthly price">+$2/mo</span>
+            <span class="addon-price-yearly price">+$20/mo</span>
+          </div>
+
+        </div>
+
+        <div class="summary">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming</p>
+
+          <div class="confirm-packages">
+            <div class="package">
+              <div class="pack">
+                <p><span id="plan-pachage"></span> ( <span id="package-duration"></span> )</p>
+                <a href="#" id="change-plan">Change</a>
+              </div>
+              <div>
+                <p id="plan-price"></p>
+              </div>
+            </div>
+            <hr>
+            <div class="additional-services">
+            </div>
+          </div>
+
+          <div class="total">
+            <p>Total (per month)</p>
+            <p>+$12/mo</p>
+          </div>
+
+        </div>
+
+        <div class="thankyou">
+          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+            <g fill="none">
+              <circle cx="40" cy="40" r="40" fill="#F9818E" />
+              <path fill="#E96170"
+                d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z" />
+              <path fill="#FFF"
+                d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z" />
+            </g>
+          </svg>
+          <h1>Thank you!</h1>
+          <p>Thanks for confirming your subscription!we hope you have fun using our platform. If you ever need support,
+            please feel free to email us at support@loremgaming.com.</p>
+        </div>
+
+      </div>
+
+      <div class="btn">
+        <button class="button" id="back" onclick="back()">Go Back</button>
+        <button class="button" id="next" onclick="next()">Next Step</button>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>

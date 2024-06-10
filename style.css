@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 380px;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sidebar {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-image: url(assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.step {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+.number {
+    margin: 10px;
+    font-size: 0.8rem;
+}
+
+.number::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin-left: -8px;
+    margin-top: -4px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.current-step {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.current-step span {
+    font-size: 0.5rem;
+    font-weight: 500;
+}
+
+.current-step h3 {
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.bottom {
+    width: 70%;
+    height: 100%;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.info, .plan, .add-ons, .summary, .thankyou {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.thankyou {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.active {
+    display: flex;
+}
+
+
+/* STEP 1 PRESONAL INFO */
+
+.info h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: hsl(231, 11%, 63%);
+}
+
+.info label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: hsl(213, 96%, 18%);
+}
+
+.info input {
+    height: 35px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.button {
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#back {
+    margin-right: auto;
+    margin-left: -20px;
+    border: none;
+    background: transparent;
+    color: black;
+}
+
+#back:hover {
+    color: hsl(213, 99%, 28%);
+}
+
+.tel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tel .error {
+    color: red;
+    display: none;
+}
+
+
+/* STEP 2 PLAN SELECTION */
+
+.plan-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.plan-item {
+    width: 33.33%;
+    height: 120px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.plan-item:hover {
+    cursor: pointer;
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(206, 94%, 87%);
+}
+
+.plan-item img {
+    margin-bottom: auto;
+    height: 40px;
+    width: 40px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.item-catagory {
+    margin-left: 5px;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.yearly-price {
+    display: none;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.monthly-price {
+    margin-left: 5px;
+    display: none;
+}
+
+.price {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 3px;
+}
+
+.free {
+    font-size: 0.7rem;
+    color: hsl(213, 96%, 18%);
+}
+
+.price-yearly {
+    display: flex;
+}
+
+.price-monthly {
+    display: block;
+}
+
+.plan-switch {
+    width: 100%;
+    height: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+.yearly,
+.monthly {
+    opacity: 0.5;
+}
+
+.yearly.blur {
+    opacity: 1;
+}
+
+.monthly.blur {
+    opacity: 1;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+
+/* STEP 3 ADD-ONS */
+
+.addon-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #696969;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+}
+
+.addon-type:hover {
+    cursor: pointer;
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(206, 94%, 87%);
+}
+
+.addon-type input:checked+.addon-type {
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(206, 94%, 87%);
+}
+
+.addon-type input {
+    margin-right: 10px;
+}
+
+.add-ons h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: -5px;
+    color: hsl(213, 96%, 18%);
+}
+
+.add-ons .add {
+    color: hsl(231, 11%, 63%);
+    font-size: 0.7rem;
+}
+
+.addon-price-yearly {
+    display: none;
+}
+
+
+.addon-type .price{
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsl(243, 100%, 62%);
+}
+
+
+
+
+/* STEP 4 CONFIRMATION */
+
+.confirm-packages {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(217, 100%, 97%);
+    padding: 10px 10px 0 10px;
+    border-radius: 5px;
+}
+
+.package {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pack {
+    display: flex;
+    flex-direction: column;
+}
+
+.pack p {
+    margin-bottom: 2px;
+}
+
+.pack a {
+    font-size: 0.7rem;
+}
+hr {
+    margin: 5px 0px 3px 0px;
+}
+
+.service{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px 10px 10px;
+}
+
+.thankyou h1 {
+    margin-top: 10px;
+}
+
+.thankyou p {
+    width: 75%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.form {
+    height: 90%;
+}
+
+.plan-item.outline,
+.addon-type.outline {
+    outline: 2px solid hsl(243, 100%, 62%);
+}
+
+input:focus {
+    outline: 1px solid hsl(243, 100%, 62%);
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+  
+
+@media (max-width:576px) {
+
+    #card {
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 100vw;
+        justify-content: center;
+        align-items: center;  
+        padding: 0;   
+    }
+
+
+    .sidebar {
+        width: 100%;
+        height: 26%;
+        color: #000;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: url(assets/images/bg-sidebar-mobile.svg);
+        background-repeat: no-repeat;
+        background-color: hsl(229, 24%, 87%);
+        border-radius: none;
+    }
+
+    .step {
+        width: fit-content;
+        margin-right: 10px;
+        margin-top: -40px;
+        color: #ffffff;
+    }
+
+    .number {
+        font-size: 1.2rem;
+    }
+
+    .number::before {
+        border: 1px solid #ffffff;
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .current-step {
+        display: none;
+    }
+
+
+    .bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(229, 24%, 87%);
+        min-width: 100vw;
+        height: 74%;
+        padding: 0;
+        
+    }
+
+    h1 {
+        color:  hsl(213, 96%, 18%);
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+ 
+    .form {
+        background-color: #ffffff;
+        padding: 25px;
+        width: 90%;
+        position: relative;
+        margin-top: -73px;
+        border-radius: 10px;
+        height: auto;
+    }
+
+    
+    .btn {
+        width: 100%;
+        background-color: #ffffff;
+        padding: 10px 20px;
+    }
+
+
+    .plan-container {
+        flex-direction: column;
+    }
+
+    .plan-item {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .select {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    .addon-type {
+        height: 60px;
+    }
+
+    .addon-type h3 {
+        margin-bottom: -3px;
+        color:  hsl(213, 96%, 18%);
+    }
+
+    .thankyou {
+        width: 100%;
+    }
+    
+    
+}
